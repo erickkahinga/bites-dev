@@ -4,7 +4,7 @@ const Pins = () => {
   return (
     <div>
         Pins
-    </div>
+     </div>
   )
 }
 
