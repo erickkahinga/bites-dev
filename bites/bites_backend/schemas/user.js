@@ -1,6 +1,5 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-
     name: 'user',
     title: 'User',
     type: 'document',
@@ -32,22 +31,19 @@ export default {
                 'reference',
                 to: [{type: 'user'}]
             }]
+        },
+        {
+            name: 'preferences',
+            title: 'Preferences',
+            type: 'array',
+            of: [{type: 'string'}]
+        },
+        {
+            name: 'orders',
+            title: 'Orders',
+            type: 'array',
+            of: [{type: 'menuItem'}]
         }
-    ],
 
-  name: 'user',
-  title: 'User',
-  type: 'document',
-  fields: [
-    {
-      name: 'userName',
-      title: 'UserName',
-      type: 'string',
-    },
-    {
-      name: 'image',
-      title: 'Image',
-      type: 'string',
-    },
-  ],
+    ],
 };

@@ -18,6 +18,21 @@ export default{
             ]
         },
         {
+            name: 'keyWords',
+            title: 'KeyWords',
+            type: 'array',
+            of: [{type: 'string'}]
+        },
+        {
+            name: 'orders',
+            title: 'Orders',
+            type: 'number',
+            validation: Rule => [
+                Rule.positive().error('Order number must be positive'),
+                Rule.integer().error('Order number must be a valid integer')
+            ]
+        },
+        {
             name: 'image',
             title: 'image',
             type: 'image'
