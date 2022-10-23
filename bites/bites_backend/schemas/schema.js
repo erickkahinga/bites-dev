@@ -8,8 +8,6 @@ import user from './user';
 import comment from './comment';
 import postedBy from './postedBy';
 import save from './save';
-
-import schemaTypes from 'all:part:@sanity/base/schema-type'
 import restaurant from './restaurant'
 import menuItem from './menuItem'
 
@@ -22,13 +20,13 @@ export default createSchema({
   // to the ones provided by any plugins that are installed
 
   types: schemaTypes.concat([
-    /* Your types here! */
     user,
     restaurant,
-    menuItem
+    menuItem,
+    pin, 
+    postedBy, 
+    comment, 
+    save
   ]),
-})
-
-  types: schemaTypes.concat([pin, user, postedBy, comment, save]),
 });
 

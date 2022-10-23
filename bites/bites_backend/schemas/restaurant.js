@@ -19,7 +19,7 @@ export default{
             type: 'array',
             of: [{type: 
                 'reference',
-                to: [{type: 'menu_item'}]
+                to: [{type: 'menuItem'}]
             }]
         },
         {
@@ -34,7 +34,7 @@ export default{
         },
         {
             name: 'image',
-            title: 'image',
+            title: 'Image',
             type: 'image'
         }
     ]
