@@ -6,6 +6,8 @@ import { AiTwotoneDelete } from 'react-icons/ai';
 import { BsFillArrowUpRightCircleFill } from 'react-icons/bs';
 
 import { client, urlFor } from '../client';
+import PinDetail from './PinDetail'
+
 
 const Pin = ({ pin }) => {
   const [postHovered, setPostHovered] = useState(false);
@@ -13,7 +15,7 @@ const Pin = ({ pin }) => {
 
   const navigate = useNavigate();
 
-  const { postedBy, image, _id, startTime } = pin;
+  const { postedBy, image, _id, title } = pin;
 
   const user = localStorage.getItem('user') !== 'undefined' ? JSON.parse(localStorage.getItem('user')) : localStorage.clear();
 
@@ -81,7 +83,7 @@ const Pin = ({ pin }) => {
               </div>
               {alreadySaved?.length !== 0 ? (
                 <button type="button" className="bg-red-500 opacity-70 hover:opacity-100 text-white font-bold px-5 py-1 text-base rounded-3xl hover:shadow-md outline-none">
-                  {pin?.save?.length}  Saved
+                  {pin?.save?.length}  GOING
                 </button>
               ) : (
                 <button
@@ -92,23 +94,16 @@ const Pin = ({ pin }) => {
                   type="button"
                   className="bg-red-500 opacity-70 hover:opacity-100 text-white font-bold px-5 py-1 text-base rounded-3xl hover:shadow-md outline-none"
                 >
-                  {pin?.save?.length}   {savingPost ? 'Saving' : 'Save'}
+                  {pin?.save?.length}   {savingPost ? 'Saving' : 'RSVP'}
                 </button>
               )}
             </div>
             <div className=" flex justify-between items-center gap-2 w-full">
-              {startTime?.slice(0).length > 0 ? (
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                  }}
+                <button 
                   type="button"
-                  className="bg-white flex items-center gap-2 text-black font-bold p-2 pl-4 pr-4 rounded-full opacity-70 hover:opacity-100 hover:shadow-md"
-                >
-                  <BsFillArrowUpRightCircleFill />
-                  {startTime?.slice(0, 6)}...
-                </button>
-              ) : undefined}
+                  className="bg-white flex items-center gap-2 text-black font-bold p-2 pl-4 pr-4 rounded-full opacity-70 hover:opacity-100 hover:shadow-md">
+                    
+                </button>   
               {
            postedBy?._id === user?.googleId && (
            <button

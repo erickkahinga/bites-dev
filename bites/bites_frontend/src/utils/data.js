@@ -76,6 +76,8 @@ export const pinDetailQuery = (pinId) => {
     about,
     category,
     destination,
+    startTime,
+    endTime,
     postedBy->{
       _id,
       userName,
@@ -110,6 +112,8 @@ export const pinDetailMorePinQuery = (pin) => {
     },
     _id,
     destination,
+    startTime,
+    endTime,
     postedBy->{
       _id,
       userName,

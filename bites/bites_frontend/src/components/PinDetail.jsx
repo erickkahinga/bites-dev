@@ -89,6 +89,9 @@ const PinDetail = ({ user }) => {
               <h1 className="text-4xl font-bold break-words mt-3">
                 {pinDetail.title}
               </h1>
+              <h1 className="text-2xl font-bold break-words mt-3">
+                {"From " + pinDetail.startTime.slice(0,10) + " until " + pinDetail.endTime.slice(0,10)}
+              </h1>
               <p className="mt-3">{pinDetail.about}</p>
             </div>
             <Link to={`/user-profile/${pinDetail?.postedBy._id}`} className="flex gap-2 mt-5 items-center bg-white rounded-lg ">
