@@ -2,9 +2,10 @@ import React from 'react'
 import { GoogleLogin } from 'react-google-login';
 import { useNavigate } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
-import shareVideo from '../assets/sleepy.mp4';
+import shareVideo from '../assets/final.mp4';
 import logo from '../assets/carrot.png';
 import { gapi } from 'gapi-script';
+import '../Login.css';
 
 import { client } from '../client';
 
@@ -39,8 +40,12 @@ const Login = () => {
             />
             <div className="absolute flex flex-col justify-center items-center top-0 right-0 left-0 bottom-0 bg-blackOverlay">
                 <div className= "p-5">
-                    <img src={logo} width="130px" alt = "logo" />
-                    <span className = "bold" > BITES </span>
+                    <div class="section"> 
+                        <p className = "text-white text-5xl font-bold">
+                            BITES
+                        </p>
+                        <img src={logo} width="40px" alt = "logo" />
+                    </div>
                 </div>
                 <div className = "shadow-2x1">
                     <GoogleLogin
@@ -60,7 +65,6 @@ const Login = () => {
                         cookiePolicy="single_host_origin"
                     />
                 </div>
-
             </div>
         </div>
     </div>
