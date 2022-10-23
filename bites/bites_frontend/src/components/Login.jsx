@@ -60,7 +60,6 @@ const Login = () => {
                         cookiePolicy="single_host_origin"
                     />
                 </div>
-
             </div>
         </div>
     </div>
