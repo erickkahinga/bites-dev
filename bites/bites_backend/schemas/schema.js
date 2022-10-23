@@ -8,8 +8,8 @@ import user from './user';
 import comment from './comment';
 import postedBy from './postedBy';
 import save from './save';
-import restaurant from './restaurant'
-import menuItem from './menuItem'
+import restaurant from './restaurant';
+import menuItem from './menuItem';
 
 
 // Then we give our schema to the builder and provide the result to Sanity
@@ -25,7 +25,7 @@ export default createSchema({
     menuItem,
     pin, 
     postedBy, 
-    comment, 
+    comment,
     save
   ]),
 });

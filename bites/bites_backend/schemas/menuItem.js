@@ -1,12 +1,12 @@
-export default{
+export default {
     name: 'menuItem',
     title: 'MenuItem',
-    type: 'object',
+    type: 'document',
     fields: [
         {
             name: 'menuItemName',
             title: 'MenuItemName',
-            type: 'string'
+            type: 'string',
         },
         {
             name: 'menuItemPrice',
@@ -20,8 +20,8 @@ export default{
         {
             name: 'image',
             title: 'Image',
-            type: 'image'
-        }
-    ]
-}
+            type: 'image',
+        },
+    ],
+};
 

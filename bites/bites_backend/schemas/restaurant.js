@@ -1,17 +1,17 @@
-export default{
+export default {
     name: 'restaurant',
     title: 'Restaurant',
-    type: 'object',
+    type: 'document',
     fields: [
         {
             name: 'restaurantName',
             title: 'RestaurantName',
-            type: 'string'
+            type: 'string',
         },
         {
             name: 'restaurantLocation',
             title: 'RestaurantLocation',
-            type: 'geopoint'
+            type: 'geopoint',
         },
         {
             name: 'restaurantMenuItems',
@@ -20,22 +20,25 @@ export default{
             of: [{type: 
                 'reference',
                 to: [{type: 'menuItem'}]
-            }]
+            }],
         },
         {
             name: 'startTime',
             title: 'StartTime',
-            type: 'datetime'
+            type: 'datetime',
         },
         {
             name: 'endTime',
             title: 'EndTime',
-            type: 'datetime'
+            type: 'datetime',
         },
         {
             name: 'image',
             title: 'Image',
-            type: 'image'
+            type: 'image',
+            options: {
+                hotspot: true,
+             },
         }
     ]
 }
