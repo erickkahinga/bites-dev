@@ -11,7 +11,7 @@ const App = () => {
       <Helmet>
           <meta charSet="utf-8" />
           <title>Bites</title>
-          <link rel="canonical" href="http://mysite.com/example" />
+          <link rel="canonical" href="http://localhost:3000/login" />
           <meta name="description" content="Come Take a Bite with Us" />
       </Helmet>
 

@@ -1,0 +1,14 @@
+.section{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: -12px;
+}
+
+.section p {
+    padding-right: 5px;
+    
+}
+
+.section img {
+    padding-left: 5px;
+}
