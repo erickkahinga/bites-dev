@@ -51,3 +51,17 @@ export const userQuery = (userId) => {
       },
     },
   }`
+
+  export const restaurantFeedQuery = `*[
+    _type == 'restaurant' &&
+    geo::distance(restaurantLocation, $currentLocation) < 16093.4
+  ] | order(startTime desc){
+    image{
+      asset -> {
+        url
+      }
+    },
+    _id,
+    restaurantName,
+    restaurantLocation,
+  }`
