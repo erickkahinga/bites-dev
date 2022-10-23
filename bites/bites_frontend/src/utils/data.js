@@ -1,4 +1,3 @@
-
 export const categories = [
   {
     name: 'Healthy',
@@ -41,7 +40,7 @@ export const categories = [
   },
 ];
 
-export const feedQuery = `*[_type == "pin"] | order(_createdAt desc) {
+export const feedQuery = `*[_type == "pin"] | order(startTime asc) {
   image{
     asset->{
       url
