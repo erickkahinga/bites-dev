@@ -1,30 +1,29 @@
 import React from 'react'
-import GoogleLogin from 'react-google-login';
-import {useNavigate} from 'react-router-dom';
-import {FcGoogle} from 'react-icons/fc';
-import shareVideo from '../assets/sleepy.mp4'
-import logo from '../assets/carrot.png'
+import { GoogleLogin } from 'react-google-login';
+import { useNavigate } from 'react-router-dom';
+import { FcGoogle } from 'react-icons/fc';
+import shareVideo from '../assets/sleepy.mp4';
+import logo from '../assets/carrot.png';
+import { gapi } from 'gapi-script';
 
-import {client} from '../client';
+import { client } from '../client';
 
 const Login = () => {
     const navigate = useNavigate();
-    const responseGoogle= (response) => {
+    const responseGoogle = (response) => {
         localStorage.setItem('user', JSON.stringify(response.profileObj));
-
-        const {name, googleId, imageUrl} = response.profileObj;
+        const { name, googleId, imageUrl } = response.profileObj ?? {};
         const doc = {
             _id: googleId,
             _type: 'user',
             userName: name,
             image: imageUrl,
-        }
+        };
 
-        client.createIfNotExist(doc)
-            .then(() => {
-                navigate('/', {replace: true})
-            })
-    }
+        client.createIfNotExists(doc).then(() => {
+            navigate('/', { replace: true });
+        });
+    };
 
   return (
     <div className="flex justify-start items-center flex-col h-screen">
@@ -35,17 +34,17 @@ const Login = () => {
                 loop
                 controls={false}
                 muted
-                autoPlay={true}
-                className='w-full h-full object-cover'
+                autoPlay
+                className="w-full h-full object-cover"
             />
             <div className="absolute flex flex-col justify-center items-center top-0 right-0 left-0 bottom-0 bg-blackOverlay">
-                <div className= "P-5">
+                <div className= "p-5">
                     <img src={logo} width="130px" alt = "logo" />
                     <span className = "bold" > BITES </span>
                 </div>
                 <div className = "shadow-2x1">
                     <GoogleLogin
-                        clientId = {process.env.REACT_APP_GOOGLE_API_TOKEN}
+                        clientId ={`${process.env.REACT_APP_GOOGLE_API_TOKEN}`}
                         render={(renderProps) => (
                             <button
                                 type = "button"
@@ -65,7 +64,7 @@ const Login = () => {
             </div>
         </div>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;
